@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <Version>0.1.0</Version>
+	  <Authors>Aleksey Orlov</Authors>
+	  <Description>Библиотека доступа к данным</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Extensions.QueryableExtensions" Version="1.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestWork.Domain\TestWork.Domain.csproj" />
+    <ProjectReference Include="..\TestWork.Inerfaces\TestWork.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
