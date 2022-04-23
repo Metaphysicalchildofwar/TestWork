@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TestWork.Domain\TestWork.Domain.csproj" />
     <ProjectReference Include="..\TestWork.Inerfaces\TestWork.Interfaces.csproj" />
+    <ProjectReference Include="..\TestWork.Interfaces\TestWork.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

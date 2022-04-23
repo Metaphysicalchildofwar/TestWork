@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWork.DAL", "TestWork.DA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWork.Dto", "TestWork.Dto\TestWork.Dto.csproj", "{CFC3FA79-3282-4E49-812B-795BA70567D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWork.Interfaces", "TestWork.Inerfaces\TestWork.Interfaces.csproj", "{A94A4475-4472-4B9F-A0C6-F6A288FE0D5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWork.Interfaces", "TestWork.Interfaces\TestWork.Interfaces.csproj", "{A94A4475-4472-4B9F-A0C6-F6A288FE0D5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
