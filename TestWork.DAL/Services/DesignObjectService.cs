@@ -130,7 +130,8 @@ namespace TestWork.DAL.Services
             return await _context.DesignObjects
                 .AsQueryable()
                 .Include(x => x.Project)
-                .FirstOrDefaultAsync(x => x.Id == id);
+                .FirstOrDefaultAsync(x => x.Id == id)
+                .ConfigureAwait(false);
         }
 
         /// <summary>
@@ -142,7 +143,8 @@ namespace TestWork.DAL.Services
         {
             return await _context.Projects
                 .AsQueryable()
-                .FirstOrDefaultAsync(x => x.Id == id);
+                .FirstOrDefaultAsync(x => x.Id == id)
+                .ConfigureAwait(false);
         }
     }
 }

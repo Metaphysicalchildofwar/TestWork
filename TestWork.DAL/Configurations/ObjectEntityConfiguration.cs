@@ -15,7 +15,7 @@ namespace TestWork.DAL.Configurations
         /// <param name="entityTypeBuilder">Конструктор набора данных</param>
         public void Configure(EntityTypeBuilder<ObjectEntity> entityTypeBuilder)
         {
-            entityTypeBuilder.ToTable("Object");
+            entityTypeBuilder.ToTable("ObjectTable");
 
             entityTypeBuilder.HasKey(m => m.Id);
             entityTypeBuilder.Property(m => m.Id).HasColumnName("ObjectId").IsRequired();
@@ -24,7 +24,7 @@ namespace TestWork.DAL.Configurations
             entityTypeBuilder.Property(m => m.DateCreate).HasColumnName("DateCreate").IsRequired();
             entityTypeBuilder.Property(m => m.DateUpdate).HasColumnName("DateUpdate").IsRequired();
 
-            entityTypeBuilder.Property(m => m.DesignObjectId).HasColumnName("ObjectId").IsRequired(false).HasDefaultValue(0);
+            entityTypeBuilder.Property(m => m.DesignObjectId).HasColumnName("DesignObjectId").IsRequired(false).HasDefaultValue(0);
             entityTypeBuilder.HasOne(m => m.DesignObject).WithMany(m => m.ObjectEntity).HasForeignKey(k => k.DesignObjectId).OnDelete(DeleteBehavior.Restrict);
         }
     }

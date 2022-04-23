@@ -15,7 +15,7 @@ namespace TestWork.DAL.Configurations
         /// <param name="entityTypeBuilder">Конструктор набора данных</param>
         public void Configure(EntityTypeBuilder<DesignObjectEntity> entityTypeBuilder)
         {
-            entityTypeBuilder.ToTable("DesignObject");
+            entityTypeBuilder.ToTable("DesignObjectTable");
 
             entityTypeBuilder.HasKey(m => m.Id);
             entityTypeBuilder.Property(m => m.Id).HasColumnName("DesignObjectId").IsRequired();

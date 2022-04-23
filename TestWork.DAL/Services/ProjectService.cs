@@ -36,14 +36,16 @@ namespace TestWork.DAL.Services
                 .ProjectTo<BaseModelDto>(_mapper.ConfigurationProvider)
                 .AsQueryable()
                 .AsNoTracking()
-                .ToListAsync().ConfigureAwait(false) :
+                .ToListAsync()
+                .ConfigureAwait(false) :
 
                 await _context.Projects
                 .ProjectTo<BaseModelDto>(_mapper.ConfigurationProvider)
                 .AsQueryable()
                 .AsNoTracking()
                 .Where(x => x.Id == id)
-                .ToListAsync().ConfigureAwait(false);
+                .ToListAsync()
+                .ConfigureAwait(false);
         }
 
         /// <summary>
@@ -117,7 +119,8 @@ namespace TestWork.DAL.Services
         {
             return await _context.Projects
                 .AsQueryable()
-                .FirstOrDefaultAsync(x => x.Id == id);
+                .FirstOrDefaultAsync(x => x.Id == id)
+                .ConfigureAwait(false);
         }
     }
 }
