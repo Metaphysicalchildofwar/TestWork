@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\ewe98\source\repos\TestWork.Api\TestWork.Api\TestWork.Api.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\ewe98\source\repos\ComputerAccessories.Api\TestWork.Api\TestWork.Api.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

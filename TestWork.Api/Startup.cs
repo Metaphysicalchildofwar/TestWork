@@ -32,7 +32,7 @@ namespace TestWork.Api
             {
                 c.SwaggerDoc("api", new OpenApiInfo
                 {
-                    Title = "ComputerAccessoriesApi",
+                    Title = "TestWork",
                     Version = "1.0"
                 });
 
@@ -54,7 +54,7 @@ namespace TestWork.Api
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/api/swagger.json", "TypesOf—omponents");
+                c.SwaggerEndpoint("/swagger/api/swagger.json", "TestWork");
             });
             if (env.IsDevelopment())
             {

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestWork.Api</name>
+    </assembly>
+    <members>
+        <member name="T:TestWork.Api.Controllers.DesignObjectController">
+            <summary>
+            Контроллер для объектов проектирования
+            </summary>
+        </member>
+        <member name="M:TestWork.Api.Controllers.DesignObjectController.#ctor(TestWork.DAL.Services.DesignObjectService)">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис для видов объектов проектирования</param>
+        </member>
+        <member name="M:TestWork.Api.Controllers.DesignObjectController.GetAsync(System.Nullable{System.Int32})">
+             <summary>
+             Получить список объектов проектирования
+             </summary>
+             <param name="id">Идентификатор</param>
+            <returns>Результат выборки</returns>
+        </member>
+        <member name="M:TestWork.Api.Controllers.DesignObjectController.PutAsync(TestWork.Dto.DesignObjects.DesignObjectWithoutIdDto)">
+             <summary>
+             Создать объект проектирования
+             </summary>
+             <param name="model">Объект для создания</param>
+            <returns>Результат создания объекта</returns>
+        </member>
+        <member name="M:TestWork.Api.Controllers.DesignObjectController.PostAsync(TestWork.Dto.DesignObjects.DesignObjectDto)">
+             <summary>
+             Изменить объект проектирования
+             </summary>
+             <param name="model">Объект для изменения</param>
+            <returns>Результат изменения объекта</returns>
+        </member>
+        <member name="M:TestWork.Api.Controllers.DesignObjectController.DeleteAsync(System.Int32)">
+             <summary>
+             Удалить объект проектирования
+             </summary>
+             <param name="id">Идентификатор</param>
+            <returns>Результат удаления объекта</returns>
+        </member>
+        <member name="T:TestWork.Api.Controllers.ObjectController">
+            <summary>
+            Контроллер для объектов
+            </summary>
+        </member>
+        <member name="M:TestWork.Api.Controllers.ObjectController.#ctor(TestWork.DAL.Services.ObjectService)">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис для проектов</param>
+        </member>
+        <member name="M:TestWork.Api.Controllers.ObjectController.GetAsync(System.Nullable{System.Int32})">
+             <summary>
+             Получить список объектов
+             </summary>
+             <param name="id">Идентификатор</param>
+            <returns>Результат выборки</returns>
+        </member>
+        <member name="M:TestWork.Api.Controllers.ObjectController.PutAsync(TestWork.Dto.Objects.ObjectWithoutIdDto)">
+             <summary>
+             Создать объект
+             </summary>
+             <param name="model">Объект для создания</param>
+            <returns>Результат создания объекта</returns>
+        </member>
+        <member name="M:TestWork.Api.Controllers.ObjectController.PostAsync(TestWork.Dto.Objects.ObjectDto)">
+             <summary>
+             Изменить объект
+             </summary>
+             <param name="model">Объект для изменения</param>
+            <returns>Результат изменения объекта</returns>
+        </member>
+        <member name="M:TestWork.Api.Controllers.ObjectController.DeleteAsync(System.Int32)">
+             <summary>
+             Удалить объект
+             </summary>
+             <param name="id">Идентификатор</param>
+            <returns>Результат удаления объекта</returns>
+        </member>
+        <member name="T:TestWork.Api.Controllers.ProjectController">
+            <summary>
+            Контроллер для проектов
+            </summary>
+        </member>
+        <member name="M:TestWork.Api.Controllers.ProjectController.#ctor(TestWork.DAL.Services.ProjectService)">
+            <summary>
+            Конструктор контроллера
+            </summary>
+            <param name="service">Сервис для проектов</param>
+        </member>
+        <member name="M:TestWork.Api.Controllers.ProjectController.GetAsync(System.Nullable{System.Int32})">
+             <summary>
+             Получить список проектов
+             </summary>
+             <param name="id">Идентификатор</param>
+            <returns>Результат выборки</returns>
+        </member>
+        <member name="M:TestWork.Api.Controllers.ProjectController.PutAsync(TestWork.Dto.Base.BaseModelWithoutIdDto)">
+             <summary>
+             Создать объект проектов
+             </summary>
+             <param name="model">Объект для создания</param>
+            <returns>Результат создания объекта</returns>
+        </member>
+        <member name="M:TestWork.Api.Controllers.ProjectController.PostAsync(TestWork.Dto.Base.BaseModelDto)">
+             <summary>
+             Изменить объект проектов
+             </summary>
+             <param name="model">Объект для изменения</param>
+            <returns>Результат изменения объекта</returns>
+        </member>
+        <member name="M:TestWork.Api.Controllers.ProjectController.DeleteAsync(System.Int32)">
+             <summary>
+             Удалить объект проектов
+             </summary>
+             <param name="id">Идентификатор</param>
+            <returns>Результат удаления объекта</returns>
+        </member>
+    </members>
+</doc>
