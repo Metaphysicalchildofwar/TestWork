@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using TestWork.Domain;
-using TestWork.Dto.Base;
-using TestWork.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TestWork.Domain;
+using TestWork.Dto.Base;
+using TestWork.Interfaces;
 
 namespace TestWork.DAL.Services
 {
@@ -55,16 +55,16 @@ namespace TestWork.DAL.Services
         ///<returns>Результат создания</returns>
         public async Task<BaseModelDto> PutAsync(BaseModelWithoutIdDto model)
         {
-            var newType = new ProjectEntity
+            var newProject = new ProjectEntity
             {
                 Name = model.Name,
                 DateCreate = DateTime.Now,
                 DateUpdate = DateTime.Now
             };
 
-            await _context.AddAsync(newType);
+            await _context.AddAsync(newProject);
             await _context.SaveChangesAsync();
-            return _mapper.Map<BaseModelDto>(newType);
+            return _mapper.Map<BaseModelDto>(newProject);
         }
 
         /// <summary>
@@ -96,18 +96,18 @@ namespace TestWork.DAL.Services
         ///<returns>Результат удаления</returns>
         public async Task<BaseModelDto> DeleteAsync(int id)
         {
-            var delType = await GetProjectAsync(id);
+            var delProject = await GetProjectAsync(id);
 
-            if (delType == null)
+            if (delProject == null)
             {
                 throw new Exception("Указанного типа объекта проектирования не существует");
             }
 
-            _context.Projects.Remove(delType);
+            _context.Projects.Remove(delProject);
 
             await _context.SaveChangesAsync();
 
-            return _mapper.Map<BaseModelDto>(delType);
+            return _mapper.Map<BaseModelDto>(delProject);
         }
 
         /// <summary>

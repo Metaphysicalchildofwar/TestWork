@@ -1,11 +1,10 @@
-﻿using TestWork.DAL.Services;
-using TestWork.Dto.DesignObjects;
-using TestWork.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using TestWork.DAL.Services;
+using TestWork.Dto.DesignObjects;
+using TestWork.Interfaces;
 
 namespace TestWork.Api.Controllers
 {
@@ -13,7 +12,7 @@ namespace TestWork.Api.Controllers
     /// Контроллер для объектов проектирования
     /// </summary>
     [ApiController]
-    [Route("Сomponents")]
+    [Route("DesignObject")]
     public class DesignObjectController : ControllerBase
     {
         private readonly IService<DesignObjectDto, DesignObjectWithoutIdDto> _service;

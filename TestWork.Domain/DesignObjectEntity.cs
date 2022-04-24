@@ -1,5 +1,5 @@
-﻿using TestWork.Domain.Base;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TestWork.Domain.Base;
 
 namespace TestWork.Domain
 {

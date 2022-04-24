@@ -1,6 +1,3 @@
-using TestWork.DAL;
-using TestWork.DAL.Services;
-using TestWork.Domain.Map;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +8,9 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
 using System.Reflection;
+using TestWork.DAL;
+using TestWork.DAL.Services;
+using TestWork.Domain.Map;
 
 namespace TestWork.Api
 {
@@ -42,9 +42,10 @@ namespace TestWork.Api
                 c.EnableAnnotations();
             });
 
-
             services.AddScoped<ProjectService>();
             services.AddScoped<DesignObjectService>();
+            services.AddScoped<ObjectService>();
+
             services.AddAutoMapper(typeof(MappingProfile));
         }
 

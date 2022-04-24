@@ -1,6 +1,6 @@
-﻿using TestWork.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using TestWork.Domain;
 
 namespace TestWork.DAL.Configurations
 {

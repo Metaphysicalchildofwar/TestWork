@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using TestWork.Domain;
-using TestWork.Dto.DesignObjects;
-using TestWork.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TestWork.Domain;
+using TestWork.Dto.DesignObjects;
+using TestWork.Interfaces;
 
 namespace TestWork.DAL.Services
 {
@@ -128,8 +128,8 @@ namespace TestWork.DAL.Services
         private async Task<DesignObjectEntity> GetDesignObjectAsync(int? id)
         {
             return await _context.DesignObjects
-                .AsQueryable()
                 .Include(x => x.Project)
+                .AsQueryable()
                 .FirstOrDefaultAsync(x => x.Id == id)
                 .ConfigureAwait(false);
         }

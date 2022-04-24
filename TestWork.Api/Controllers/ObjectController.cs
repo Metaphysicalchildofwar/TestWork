@@ -3,69 +3,69 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using TestWork.DAL.Services;
-using TestWork.Dto.Base;
+using TestWork.Dto.Objects;
 using TestWork.Interfaces;
 
 namespace TestWork.Api.Controllers
 {
     /// <summary>
-    /// Контроллер для проектов
+    /// Контроллер для объектов
     /// </summary>
     [ApiController]
-    [Route("Projects")]
-    public class ProjectController : ControllerBase
+    [Route("Objects")]
+    public class ObjectController : ControllerBase
     {
-        private readonly IService<BaseModelDto, BaseModelWithoutIdDto> _service;
+        private readonly IService<ObjectDto, ObjectWithoutIdDto> _service;
 
         /// <summary>
         /// Конструктор контроллера
         /// </summary>
         /// <param name="service">Сервис для проектов</param>
-        public ProjectController(ProjectService service)
+        public ObjectController(ObjectService service)
         {
             _service = service;
         }
 
         /// <summary>
-        /// Получить список проектов
+        /// Получить список объектов
         /// </summary>
         /// <param name="id">Идентификатор</param>
         ///<returns>Результат выборки</returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BaseModelDto>>> GetAsync(int? id)
+        public async Task<ActionResult<IEnumerable<ObjectDto>>> GetAsync(int? id)
         {
             return Ok(await _service.GetAsync(id));
         }
 
         /// <summary>
-        /// Создать объект проектов
+        /// Создать объект
         /// </summary>
         /// <param name="model">Объект для создания</param>
         ///<returns>Результат создания объекта</returns>
         [HttpPut]
-        public async Task<ActionResult<BaseModelDto>> PutAsync([Required] BaseModelWithoutIdDto model)
+        public async Task<ActionResult<ObjectDto>> PutAsync([Required] ObjectWithoutIdDto model)
         {
             return Ok(await _service.PutAsync(model));
         }
 
         /// <summary>
-        /// Изменить объект проектов
+        /// Изменить объект
         /// </summary>
         /// <param name="model">Объект для изменения</param>
         ///<returns>Результат изменения объекта</returns>
         [HttpPost]
-        public async Task<ActionResult<BaseModelDto>> PostAsync([Required] BaseModelDto model)
+        public async Task<ActionResult<ObjectDto>> PostAsync([Required] ObjectDto model)
         {
             return Ok(await _service.PostAsync(model));
         }
 
         /// <summary>
-        /// Удалить объект проектов
+        /// Удалить объект
         /// </summary>
         /// <param name="id">Идентификатор</param>
         ///<returns>Результат удаления объекта</returns>
         [HttpDelete]
-        public async Task<ActionResult<BaseModelDto>> DeleteAsync([Required] int id)
+        public async Task<ActionResult<ObjectDto>> DeleteAsync([Required] int id)
         {
             return Ok(await _service.DeleteAsync(id));
         }
