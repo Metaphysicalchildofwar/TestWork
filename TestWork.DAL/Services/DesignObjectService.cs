@@ -66,7 +66,8 @@ namespace TestWork.DAL.Services
                 Name = model.Name,
                 DateCreate = DateTime.Now,
                 DateUpdate = DateTime.Now,
-                Project = project
+                Project = project,
+                Code = model.Code
             };
 
             await _context.AddAsync(newDesignObject);
@@ -94,6 +95,7 @@ namespace TestWork.DAL.Services
 
             updateDesignObject.Name = model.Name;
             updateDesignObject.DateUpdate = DateTime.Now;
+            updateDesignObject.Code = model.Code;
 
             await _context.SaveChangesAsync();
 

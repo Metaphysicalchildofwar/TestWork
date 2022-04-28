@@ -7,6 +7,7 @@ use TestDb
 CREATE TABLE [dbo].[ProjectTable](
 	[ProjectId] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](20) NOT NULL,
+	[Code] [varchar](20) NOT NULL,
 	[DateCreate] [datetime] NOT NULL,
 	[DateUpdate] [datetime] NOT NULL,
  CONSTRAINT [PK_ProjectTable] PRIMARY KEY CLUSTERED 
@@ -19,6 +20,7 @@ GO
 CREATE TABLE [dbo].[DesignObjectTable](
 	[DesignObjectId] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](20) NOT NULL,
+	[Code] [varchar](20) NOT NULL,
 	[DateCreate] [datetime] NOT NULL,
 	[DateUpdate] [datetime] NOT NULL,
 	[ProjectId] [int] NOT NULL,
@@ -36,6 +38,7 @@ GO
 CREATE TABLE [dbo].[ObjectTable](
 	[ObjectId] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](20) NOT NULL,
+	[Code] [varchar](20) NOT NULL,
 	[DateCreate] [datetime] NOT NULL,
 	[DateUpdate] [datetime] NOT NULL,
 	[DesignObjectId] [int] NOT NULL,
@@ -51,34 +54,34 @@ REFERENCES [dbo].[DesignObjectTable] ([DesignObjectId])
 GO
 
 --Создать данные
-insert into ProjectTable (Name, DateCreate, DateUpdate)
+insert into ProjectTable (Name, Code, DateCreate, DateUpdate)
 values 
-('Бытовая техника', GETDATE(), GETDATE()),
-('Компьютеры', GETDATE(), GETDATE()),
-('Смартфоны и гаджеты', GETDATE(), GETDATE())
+('Бытовая техника', '', GETDATE(), GETDATE()),
+('Компьютеры', '', GETDATE(), GETDATE()),
+('Смартфоны и гаджеты', '', GETDATE(), GETDATE())
 
-insert into DesignObjectTable (Name, ProjectId, DateCreate, DateUpdate)
+insert into DesignObjectTable (Name, Code, ProjectId, DateCreate, DateUpdate)
 values
-('Телевизоры', (select top 1 ProjectId from ProjectTable where Name = 'Бытовая техника'), GETDATE(), GETDATE()),
-('Холодильники', (select top 1 ProjectId from ProjectTable where Name = 'Бытовая техника'), GETDATE(), GETDATE()),
-('Ноутбуки', (select top 1 ProjectId from ProjectTable where Name = 'Компьютеры'), GETDATE(), GETDATE()),
-('Моноблоки', (select top 1 ProjectId from ProjectTable where Name = 'Компьютеры'), GETDATE(), GETDATE()),
-('Кнопочные телефоны', (select top 1 ProjectId from ProjectTable where Name = 'Смартфоны и гаджеты'), GETDATE(), GETDATE()),
-('Смартфоны', (select top 1 ProjectId from ProjectTable where Name = 'Смартфоны и гаджеты'), GETDATE(), GETDATE())
+('Телевизоры', '', (select top 1 ProjectId from ProjectTable where Name = 'Бытовая техника'), GETDATE(), GETDATE()),
+('Холодильники', '', (select top 1 ProjectId from ProjectTable where Name = 'Бытовая техника'), GETDATE(), GETDATE()),
+('Ноутбуки', '', (select top 1 ProjectId from ProjectTable where Name = 'Компьютеры'), GETDATE(), GETDATE()),
+('Моноблоки', '', (select top 1 ProjectId from ProjectTable where Name = 'Компьютеры'), GETDATE(), GETDATE()),
+('Кнопочные телефоны', '', (select top 1 ProjectId from ProjectTable where Name = 'Смартфоны и гаджеты'), GETDATE(), GETDATE()),
+('Смартфоны', '', (select top 1 ProjectId from ProjectTable where Name = 'Смартфоны и гаджеты'), GETDATE(), GETDATE())
 
-insert into ObjectTable (Name, DesignObjectId, DateCreate, DateUpdate)
+insert into ObjectTable (Name, Code, DesignObjectId, DateCreate, DateUpdate)
 values
-('LG', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Телевизоры'), GETDATE(), GETDATE()),
-('Samsung', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Телевизоры'), GETDATE(), GETDATE()),
-('Hyundai', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Холодильники'), GETDATE(), GETDATE()),
-('DEXP', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Холодильники'), GETDATE(), GETDATE()),
-('ASUS', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Ноутбуки'), GETDATE(), GETDATE()),
-('Lenovo', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Ноутбуки'), GETDATE(), GETDATE()),
-('HP', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Моноблоки'), GETDATE(), GETDATE()),
-('Acer', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Моноблоки'), GETDATE(), GETDATE()),
-('INOI', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Кнопочные телефоны'), GETDATE(), GETDATE()),
-('Digma', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Кнопочные телефоны'), GETDATE(), GETDATE()),
-('Xiaomi', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Смартфоны'), GETDATE(), GETDATE()),
-('IPhone', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Смартфоны'), GETDATE(), GETDATE())
+('LG', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Телевизоры'), GETDATE(), GETDATE()),
+('Samsung', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Телевизоры'), GETDATE(), GETDATE()),
+('Hyundai', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Холодильники'), GETDATE(), GETDATE()),
+('DEXP', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Холодильники'), GETDATE(), GETDATE()),
+('ASUS', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Ноутбуки'), GETDATE(), GETDATE()),
+('Lenovo', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Ноутбуки'), GETDATE(), GETDATE()),
+('HP', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Моноблоки'), GETDATE(), GETDATE()),
+('Acer', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Моноблоки'), GETDATE(), GETDATE()),
+('INOI', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Кнопочные телефоны'), GETDATE(), GETDATE()),
+('Digma', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Кнопочные телефоны'), GETDATE(), GETDATE()),
+('Xiaomi', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Смартфоны'), GETDATE(), GETDATE()),
+('IPhone', '', (select top 1 DesignObjectId from DesignObjectTable where Name = 'Смартфоны'), GETDATE(), GETDATE())
 
 

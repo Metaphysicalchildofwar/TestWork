@@ -12,5 +12,11 @@ namespace TestWork.Dto.Base
         /// </summary>
         [Required]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Код
+        /// </summary>
+        [Required]
+        public string Code { get; set; }
     }
 }

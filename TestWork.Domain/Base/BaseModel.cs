@@ -26,5 +26,10 @@ namespace TestWork.Domain.Base
         /// Дата обновления
         /// </summary>
         public DateTime DateUpdate { get; set; }
+
+        /// <summary>
+        /// Код
+        /// </summary>
+        public string Code { get; set; }
     }
 }
